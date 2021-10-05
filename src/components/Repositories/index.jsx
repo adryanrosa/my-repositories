@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { GraphQLClient, gql } from 'graphql-request';
 
+import Repository from '../Repository';
+
 function Repositories() {
   const [repositories, setRepositories] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -8,10 +10,15 @@ function Repositories() {
 
   useEffect(() => {
     const endpoint = 'https://api.github.com/graphql';
+    const graphQLClient = new GraphQLClient(endpoint, {
+      headers: {
+        authorization: 'Bearer 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',
+      },
+    });
     const query = gql`
       {
         user(login: "adryanrosa") {
-          repositories(last: 20) {
+          repositories(last: 20, orderBy: {field: CREATED_AT, direction: DESC}) {
             edges {
               node {
                 id
@@ -30,11 +37,6 @@ function Repositories() {
         }
       }
     `;
-    const graphQLClient = new GraphQLClient(endpoint, {
-      headers: {
-        authorization: 'Bearer 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',
-      },
-    });
 
     const fetchData = async () => {
       try {
@@ -55,11 +57,13 @@ function Repositories() {
 
   return (
     <section>
-      {
-        repositories.map(({ node }) => (
-          <h3 key={ node.id }>{node.name}</h3>
-        ))
-      }
+      <ul>
+        {
+          repositories.map(({ node }) => (
+            <Repository key={ node.id } node={ node } />
+          ))
+        }
+      </ul>
     </section>
   );
 }
