@@ -1,8 +1,13 @@
+import Header from './components/Header';
+import Repositories from './components/Repositories';
+
 function App() {
   return (
-    <div>
-      My App
-    </div>
+    <>
+      <Header />
+
+      <Repositories />
+    </>
   );
 }
 
