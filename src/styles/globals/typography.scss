@@ -1,0 +1,28 @@
+@use "../utils" as *;
+
+:root {
+  --fw-regular: 400;
+  --fw-bold: 500;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-regular);
+  color: var(--clr-neutral-100);
+}
+
+h1,
+h2,
+h3,
+button {
+  font-weight: var(--fw-bold);
+}
+
+a {
+  text-decoration: none;
+
+  &:visited,
+  &:active {
+    color: inherit;
+  }
+}
