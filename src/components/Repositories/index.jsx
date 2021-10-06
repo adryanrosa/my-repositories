@@ -10,6 +10,8 @@ function Repositories() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
+  const [nameSearch, setNameSearch] = useState('');
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -30,11 +32,19 @@ function Repositories() {
 
   return (
     <main className="repositories">
+      <input
+        value={ nameSearch }
+        onChange={ ({ target }) => setNameSearch(target.value) }
+        type="text"
+      />
+
       <ul className="repositories__grid">
         {
-          repositories.map(({ node }) => (
-            <Repository key={ node.id } node={ node } />
-          ))
+          repositories
+            .filter(({ node }) => node.name.includes(nameSearch))
+            .map(({ node }) => (
+              <Repository key={ node.id } node={ node } />
+            ))
         }
       </ul>
     </main>

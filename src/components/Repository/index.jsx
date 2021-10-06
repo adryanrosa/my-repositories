@@ -29,17 +29,15 @@ function Repository(
       </div>
 
       <div className="repository__footer">
-        <div>
-          <p className="repository__time">
-            Created at:
-            {' '}
-            <time
-              dateTime={ date }
-            >
-              {date.toLocaleDateString('pt-br')}
-            </time>
-          </p>
-        </div>
+        <p className="repository__time">
+          Created at:
+          {' '}
+          <time
+            dateTime={ date }
+          >
+            {date.toLocaleDateString('pt-br')}
+          </time>
+        </p>
 
         <div className="repository__icons">
           <a href={ url } target="_blank" rel="noreferrer">
