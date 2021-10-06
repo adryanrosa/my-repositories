@@ -1,0 +1,48 @@
+.select {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1rem;
+  background-color: var(--clr-neutral-400);
+  font-size: 0.9375rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.125rem;
+  cursor: pointer;
+
+  &[open] summary ~ * {
+    animation: sweep 0.1875s ease-in-out;
+  }
+
+  summary {
+    list-style: none;
+  }
+
+  menu {
+    border: 0.125rem solid var(--clr-neutral-700);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: var(--clr-neutral-400);
+    border-radius: 0.125rem;
+  }
+
+  &__item {
+    background-color: transparent;
+    border: none;
+    color: var(--clr-neutral-100);
+    font-weight: var(--fw-regular);
+  }
+
+  @keyframes sweep {
+    0% {
+      top: 0;
+      transform: scaleY(0);
+    }
+    100% {
+      top: calc(100% + 0.5rem);
+      transform: none;
+    }
+  }
+}

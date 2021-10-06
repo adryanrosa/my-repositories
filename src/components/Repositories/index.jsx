@@ -5,6 +5,7 @@ import graphQLClient from '../../graphql/client';
 import { GET_REPOSITORIES } from '../../graphql/queries';
 import Repository from '../Repository';
 import InputText from '../InputText';
+import Select from '../Select';
 
 function Repositories() {
   const [repositories, setRepositories] = useState([]);
@@ -37,6 +38,11 @@ function Repositories() {
         value={ nameSearch }
         handleChange={ setNameSearch }
         placeholder="Find a repository..."
+      />
+
+      <Select
+        text="Type"
+        items={ ['asd', 'qwe', 'zxc'] }
       />
 
       <ul className="repositories__grid">
