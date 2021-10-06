@@ -9,13 +9,6 @@ export const GET_REPOSITORIES = gql`
             id
             name
             createdAt
-            description
-            homepageUrl
-            url
-            isPrivate
-            isFork
-            isArchived
-            updatedAt
             repositoryTopics(last: 10) {
               edges {
                 node {
@@ -26,6 +19,13 @@ export const GET_REPOSITORIES = gql`
                 }
               }
             }
+            description
+            homepageUrl
+            url
+            isPrivate
+            isFork
+            isArchived
+            updatedAt
           }
         }
       }
