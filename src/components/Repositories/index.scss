@@ -2,7 +2,7 @@
 
 .repositories {
   max-width: 64rem;
-  margin-top: 2rem;
+  padding: 1rem;
   @include margin-x-auto;
 
   &__grid {

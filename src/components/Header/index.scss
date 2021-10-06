@@ -1,4 +1,8 @@
 .header {
-  padding: 1rem;
+  padding: 1.5rem 1rem 1rem;
   text-align: center;
+
+  h1 {
+    color: var(--clr-primary);
+  }
 }

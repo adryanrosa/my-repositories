@@ -29,7 +29,7 @@ function Repositories() {
   if (error) return 'Something wen\'t wrong. Please reload';
 
   return (
-    <section className="repositories">
+    <main className="repositories">
       <ul className="repositories__grid">
         {
           repositories.map(({ node }) => (
@@ -37,7 +37,7 @@ function Repositories() {
           ))
         }
       </ul>
-    </section>
+    </main>
   );
 }
 

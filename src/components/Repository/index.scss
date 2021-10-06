@@ -1,0 +1,15 @@
+.repository {
+  padding: 1.5rem 1rem;
+  background-color: var(--clr-neutral-400);
+  border-radius: 0.1875rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  h3 {
+    color: var(--clr-primary);
+  }
+
+  time {
+    opacity: 0.75;
+    font-size: 0.6875rem;
+  }
+}

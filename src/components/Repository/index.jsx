@@ -1,8 +1,10 @@
+import './index.scss';
+
 function Repository({ node: { name, createdAt, description, url, homepageUrl } }) {
   const date = new Date(createdAt);
 
   return (
-    <li>
+    <li className="repository">
       <h3>{name}</h3>
 
       <time
