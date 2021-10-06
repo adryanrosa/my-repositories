@@ -28,10 +28,10 @@ function Repository(
         <p>{description || 'There\'s no description for this repository'}</p>
       </div>
 
-      <footer className="repository__footer">
+      <div className="repository__footer">
         <div>
           <p className="repository__time">
-            Last updated:
+            Created at:
             {' '}
             <time
               dateTime={ date }
@@ -54,7 +54,7 @@ function Repository(
             )
           }
         </div>
-      </footer>
+      </div>
     </li>
   );
 }
