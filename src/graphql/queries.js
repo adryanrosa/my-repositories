@@ -9,7 +9,7 @@ export const GET_REPOSITORIES = gql`
             id
             name
             createdAt
-            repositoryTopics(last: 10) {
+            repositoryTopics(last: 5) {
               edges {
                 node {
                   topic {
