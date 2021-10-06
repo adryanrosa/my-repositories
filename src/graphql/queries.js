@@ -3,7 +3,7 @@ import { gql } from 'graphql-request';
 export const GET_REPOSITORIES = gql`
   {
     user(login: "adryanrosa") {
-      repositories(last: 20, orderBy: {field: CREATED_AT, direction: DESC}) {
+      repositories(last: 20) {
         edges {
           node {
             id

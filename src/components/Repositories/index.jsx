@@ -14,6 +14,7 @@ function Repositories() {
 
   const [nameSearch, setNameSearch] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
+  const [sort, setSort] = useState('Name');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,7 +32,7 @@ function Repositories() {
   }, []);
 
   if (loading) return 'Loading';
-  if (error) return 'Something wen\'t wrong. Please reload';
+  if (error) return 'Something wen\'t wrong. Please reload the page';
 
   return (
     <main className="repositories">
@@ -49,11 +50,22 @@ function Repositories() {
         all
       />
 
+      <Select
+        id="sort"
+        text="Sort"
+        items={ ['Name', 'Last updated'] }
+        handleClick={ setSort }
+      />
+
       <ul className="repositories__grid">
         {
           repositories
             .filter(({ node }) => node.name.includes(nameSearch))
             .filter(({ node }) => (typeFilter ? node[`is${typeFilter}`] : true))
+            .sort((a, b) => (sort === 'Name'
+              ? a.node.name.localeCompare(b.node.name)
+              : b.node.updatedAt.localeCompare(a.node.updatedAt)
+            ))
             .map(({ node }) => (
               <Repository key={ node.id } node={ node } />
             ))
