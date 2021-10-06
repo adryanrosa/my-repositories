@@ -1,0 +1,17 @@
+@use "../../styles/utils" as *;
+
+.repositories {
+  max-width: 64rem;
+  margin-top: 2rem;
+  @include margin-x-auto;
+
+  &__grid {
+    display: grid;
+    gap: 1rem;
+
+    @include breakpoint-up(large) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+}

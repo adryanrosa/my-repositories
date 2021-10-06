@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import './index.scss';
 import graphQLClient from '../../graphql/client';
 import { GET_REPOSITORIES } from '../../graphql/queries';
 import Repository from '../Repository';
@@ -28,8 +29,8 @@ function Repositories() {
   if (error) return 'Something wen\'t wrong. Please reload';
 
   return (
-    <section>
-      <ul>
+    <section className="repositories">
+      <ul className="repositories__grid">
         {
           repositories.map(({ node }) => (
             <Repository key={ node.id } node={ node } />
