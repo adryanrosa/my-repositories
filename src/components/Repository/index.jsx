@@ -1,5 +1,7 @@
 import Topic from '../Topic';
 import './index.scss';
+import Github from '../../icons/Github';
+import Live from '../../icons/Live';
 
 function Repository(
   { node: { name, createdAt, repositoryTopics, description, url, homepageUrl } },
@@ -11,36 +13,48 @@ function Repository(
       <div>
         <h3>{name}</h3>
 
-        <div className="repository__topics">
-          {
-            repositoryTopics.edges.map(({ node }) => (
-              <Topic key={ node.topic.id }>{node.topic.name}</Topic>
-            ))
-          }
-        </div>
-
-        <p>{description || 'There\'s no description for this repository'}</p>
-
-        <p className="repository__time">
-          Last updated:
-          {' '}
-          <time
-            dateTime={ date }
-          >
-            {date.toLocaleDateString('pt-br')}
-          </time>
-        </p>
-      </div>
-
-      <div>
-        <a href={ url } target="_blank" rel="noreferrer">Repository</a>
-
         {
-          homepageUrl && (
-            <a href={ homepageUrl } target="_blank" rel="noreferrer">App</a>
+          repositoryTopics.edges.length > 0 && (
+            <div className="repository__topics">
+              {
+                repositoryTopics.edges.map(({ node }) => (
+                  <Topic key={ node.topic.id }>{node.topic.name}</Topic>
+                ))
+              }
+            </div>
           )
         }
+
+        <p>{description || 'There\'s no description for this repository'}</p>
       </div>
+
+      <footer className="repository__footer">
+        <div>
+          <p className="repository__time">
+            Last updated:
+            {' '}
+            <time
+              dateTime={ date }
+            >
+              {date.toLocaleDateString('pt-br')}
+            </time>
+          </p>
+        </div>
+
+        <div className="repository__icons">
+          <a href={ url } target="_blank" rel="noreferrer">
+            <Github />
+          </a>
+
+          {
+            homepageUrl && (
+              <a href={ homepageUrl } target="_blank" rel="noreferrer">
+                <Live />
+              </a>
+            )
+          }
+        </div>
+      </footer>
     </li>
   );
 }

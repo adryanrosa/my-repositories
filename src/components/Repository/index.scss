@@ -1,26 +1,51 @@
+@use "../../styles/utils" as *;
+
 .repository {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1.5rem 1rem;
+  padding: 1.0625rem 1rem 1.5rem;
   background-color: var(--clr-neutral-400);
   font-size: 0.875rem;
   border-radius: 0.1875rem;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
   h3 {
-    font-size: 1.375rem;
+    font-size: 1.25rem;
     color: var(--clr-primary);
   }
 
   &__topics {
     display: flex;
     gap: 0.25rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.75rem;
   }
 
   &__time {
     opacity: 0.75;
     font-size: 0.6875rem;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 0.625rem;
+    font-size: 1.125rem;
+
+    svg {
+      transition: color 125ms ease-in-out;
+
+      @include media-hover {
+        &:hover {
+          color: var(--clr-primary);
+        }
+      }
+    }
   }
 }
