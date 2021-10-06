@@ -12,7 +12,7 @@ function Repositories() {
     const endpoint = 'https://api.github.com/graphql';
     const graphQLClient = new GraphQLClient(endpoint, {
       headers: {
-        authorization: 'Bearer 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',
+        authorization: 'Bearer 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',
       },
     });
     const query = gql`
