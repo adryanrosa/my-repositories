@@ -4,6 +4,7 @@ import './index.scss';
 import graphQLClient from '../../graphql/client';
 import { GET_REPOSITORIES } from '../../graphql/queries';
 import Repository from '../Repository';
+import InputText from '../InputText';
 
 function Repositories() {
   const [repositories, setRepositories] = useState([]);
@@ -32,10 +33,10 @@ function Repositories() {
 
   return (
     <main className="repositories">
-      <input
+      <InputText
         value={ nameSearch }
-        onChange={ ({ target }) => setNameSearch(target.value) }
-        type="text"
+        handleChange={ setNameSearch }
+        placeholder="Find a repository..."
       />
 
       <ul className="repositories__grid">
