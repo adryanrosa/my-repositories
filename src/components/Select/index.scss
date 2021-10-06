@@ -1,6 +1,7 @@
 .select {
   position: relative;
   display: inline-block;
+  min-width: 7.5rem;
   margin-bottom: 1rem;
   background-color: var(--clr-neutral-400);
   font-size: 0.9375rem;
@@ -23,6 +24,7 @@
     top: calc(100% + 0.5rem);
     left: 0;
     width: 100%;
+    padding: 0.5rem;
     z-index: 100;
     background-color: var(--clr-neutral-400);
     border-radius: 0.125rem;
@@ -33,6 +35,7 @@
     border: none;
     color: var(--clr-neutral-100);
     font-weight: var(--fw-regular);
+    cursor: pointer;
   }
 
   @keyframes sweep {

@@ -13,6 +13,7 @@ function Repositories() {
   const [error, setError] = useState(false);
 
   const [nameSearch, setNameSearch] = useState('');
+  const [typeFilter, setTypeFilter] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,14 +42,18 @@ function Repositories() {
       />
 
       <Select
+        id="type"
         text="Type"
-        items={ ['asd', 'qwe', 'zxc'] }
+        items={ ['Private', 'Fork', 'Archived'] }
+        handleClick={ setTypeFilter }
+        all
       />
 
       <ul className="repositories__grid">
         {
           repositories
             .filter(({ node }) => node.name.includes(nameSearch))
+            .filter(({ node }) => (typeFilter ? node[`is${typeFilter}`] : true))
             .map(({ node }) => (
               <Repository key={ node.id } node={ node } />
             ))
