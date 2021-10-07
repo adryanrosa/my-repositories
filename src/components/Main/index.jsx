@@ -32,7 +32,7 @@ function Main() {
     fetchData();
   }, []);
 
-  if (loading) return <Message>Loading</Message>;
+  if (loading) return <Message>Loading...</Message>;
   if (error) return <Message>Something wen&apos;t wrong. Please reload the page</Message>;
 
   return (
