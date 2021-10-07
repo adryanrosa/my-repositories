@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import './index.scss';
 import graphQLClient from '../../graphql/client';
 import { GET_REPOSITORIES } from '../../graphql/queries';
+import Message from '../Message';
 import InputText from '../InputText';
 import Select from '../Select';
 import Repositories from '../Repositories';
@@ -31,8 +32,8 @@ function Main() {
     fetchData();
   }, []);
 
-  if (loading) return 'Loading';
-  if (error) return 'Something wen\'t wrong. Please reload the page';
+  if (loading) return <Message>Loading</Message>;
+  if (error) return <Message>Something wen&apos;t wrong. Please reload the page</Message>;
 
   return (
     <main className="main">
