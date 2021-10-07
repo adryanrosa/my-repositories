@@ -4,6 +4,7 @@ const endpoint = 'https://api.github.com/graphql';
 
 const graphQLClient = new GraphQLClient(endpoint, {
   headers: {
+    // .env
     authorization: `Bearer ${import.meta.env.VITE_APP_AUTH_TOKEN}`,
   },
 });
