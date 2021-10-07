@@ -1,12 +1,12 @@
 import Header from './components/Header';
-import Repositories from './components/Repositories';
+import Main from './components/Main';
 
 function App() {
   return (
     <>
       <Header />
 
-      <Repositories />
+      <Main />
     </>
   );
 }

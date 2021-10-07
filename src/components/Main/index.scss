@@ -1,0 +1,18 @@
+@use "../../styles/utils" as *;
+
+.main {
+  max-width: 70rem;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  @include margin-x-auto;
+
+  input {
+    margin-bottom: 1rem;
+  }
+
+  &__menus {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+  }
+}
