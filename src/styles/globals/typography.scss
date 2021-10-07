@@ -10,6 +10,10 @@ body {
   font-weight: var(--fw-regular);
   font-size: 0.9375rem;
   color: var(--clr-neutral-100);
+
+  @include breakpoint-up(large) {
+    font-size: 1.0625rem;
+  }
 }
 
 h1,
