@@ -4,7 +4,7 @@ const endpoint = 'https://api.github.com/graphql';
 
 const graphQLClient = new GraphQLClient(endpoint, {
   headers: {
-    authorization: 'Bearer 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',
+    authorization: `Bearer ${import.meta.env.VITE_APP_AUTH_TOKEN}`,
   },
 });
 
