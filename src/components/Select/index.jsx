@@ -1,9 +1,13 @@
 import './index.scss';
+import Chevron from '../../icons/Chevron';
 
 function Select({ id, text, items, handleClick, all }) {
   return (
     <details id={ id } className="select">
-      <summary>{text}</summary>
+      <summary>
+        {text}
+        <Chevron />
+      </summary>
 
       <menu>
         {
