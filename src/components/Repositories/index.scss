@@ -6,6 +6,17 @@
   padding-bottom: 2rem;
   @include margin-x-auto;
 
+  input {
+    margin-bottom: 1rem;
+  }
+
+  &__menus {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+  }
+
   &__grid {
     display: grid;
     gap: 1rem;

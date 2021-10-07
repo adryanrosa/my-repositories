@@ -14,7 +14,7 @@ function Repositories() {
 
   const [nameSearch, setNameSearch] = useState('');
   const [typeFilter, setTypeFilter] = useState('');
-  const [sort, setSort] = useState('Name');
+  const [sort, setSort] = useState('Last updated');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,20 +42,22 @@ function Repositories() {
         placeholder="Find a repository..."
       />
 
-      <Select
-        id="type"
-        text="Type"
-        items={ ['Private', 'Fork', 'Archived'] }
-        handleClick={ setTypeFilter }
-        all
-      />
+      <div className="repositories__menus">
+        <Select
+          id="type"
+          text="Type"
+          items={ ['Private', 'Fork', 'Archived'] }
+          handleClick={ setTypeFilter }
+          all
+        />
 
-      <Select
-        id="sort"
-        text="Sort"
-        items={ ['Name', 'Last updated'] }
-        handleClick={ setSort }
-      />
+        <Select
+          id="sort"
+          text="Sort"
+          items={ ['Name', 'Last updated'] }
+          handleClick={ setSort }
+        />
+      </div>
 
       <ul className="repositories__grid">
         {
