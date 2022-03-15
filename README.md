@@ -1,4 +1,4 @@
-# 🚀 Front-End challenge - Graphql API SpaceX
+# Front-End challenge - Graphql API GitHub
 Esse app exibe a lista dos meus repositórios usando a API GraphQL pública do GitHub
 
 ## Sumário
